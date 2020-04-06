@@ -1,0 +1,31 @@
+header {
+  background-color: #fff;
+  -webkit-box-shadow: 0 6px 20px rgba(36, 48, 54, 0.06);
+  box-shadow: 0 6px 20px rgba(36, 48, 54, 0.06);
+  -webkit-transition: box-shadow 0.5s;
+  -moz-transition: box-shadow 0.5s;
+  -o-transition: box-shadow 0.5s;
+  -ms-transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s;
+  z-index: 400;
+  min-height: 52px;
+}
+
+header nav li {
+  list-style: none;
+  float: left;
+  padding: 0;
+  margin: 0;
+}
+header nav,
+ul {
+  height: 52px;
+}
+header nav li a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  word-wrap: break-word;
+  color: #79818c;
+}
