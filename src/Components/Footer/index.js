@@ -1,13 +1,17 @@
 import React from "react";
+import "./index.module.css";
+import { Col, Row } from "antd";
 
-class Foot extends React.Component {
+class Footer extends React.Component {
   render() {
     return (
-      <>
-        <footer>Ant Design ©2018 Created by Ant UED</footer>
-      </>
+      <footer>
+        <Row>
+          <Col span={12}></Col>
+        </Row>
+      </footer>
     );
   }
 }
 
-export default Foot;
+export default Footer;

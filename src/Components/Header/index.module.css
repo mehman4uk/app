@@ -29,3 +29,6 @@ header nav li a {
   word-wrap: break-word;
   color: #79818c;
 }
+.ant-menu-horizontal {
+  border-radius: 8px;
+}

@@ -1,12 +1,13 @@
 import React from "react";
-// import Style from "../index.module.css";
+import s from "./index.module.css";
 
 class Auth extends React.Component {
   render() {
-    let pageTitle = "123";
     return (
       <>
-        <h1>Home page</h1>
+        <div className={s.notification}>
+          Работаем как обычно: доставка безопасна, все сервисы — онлайн
+        </div>
       </>
     );
   }

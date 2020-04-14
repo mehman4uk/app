@@ -2,17 +2,23 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Helmet from "react-helmet";
 import { Menu } from "antd";
-import { MailOutlined } from "@ant-design/icons";
+import {
+  UserAddOutlined,
+  UserOutlined,
+  CommentOutlined,
+} from "@ant-design/icons";
 
 /* all pages import */
-import Auth from "../../Pages/Auth";
+import Login from "../../Pages/Login";
+import Registration from "../../Pages/Registration";
 import Home from "../../Pages/Home";
+import Support from "../../Pages/Support";
 
-let pageTitle = "22Название страницы";
+let pageTitle = "Название страницы";
 
 class Header extends React.Component {
   state = {
-    current: "mail",
+    current: "login",
   };
 
   handleClick = (e) => {
@@ -24,30 +30,41 @@ class Header extends React.Component {
 
   render() {
     return (
-      <>
+      <Router>
         <Helmet>
           <meta charSet="utf-8" />
           <title>{pageTitle}</title>
-          <link rel="canonical" href="http://mysite.com/example" />
+          <link rel="canonical" href="" />
         </Helmet>
-        <Router>
+        <header className="pt-25">
           <Menu
             onClick={this.handleClick}
             selectedKeys={[this.state.current]}
             mode="horizontal"
           >
-            <Menu.Item key="mail">
-              <MailOutlined />
-              <Link to="/auth">Auth</Link>
-            </Menu.Item>
             <Menu.Item key="login" onClick={this.showModal}>
-              <Link to="/">Home</Link>
+              <Link to="/">Главная</Link>
+            </Menu.Item>
+            <Menu.Item key="">
+              <UserAddOutlined />
+              <Link to="/registration">Регистрация</Link>
+            </Menu.Item>
+            <Menu.Item key="">
+              <UserOutlined />
+              <Link to="/login">Войти</Link>
+            </Menu.Item>
+
+            <Menu.Item key="" style={{ float: "right" }}>
+              <CommentOutlined />
+              <Link to="/support">Поддержка</Link>
             </Menu.Item>
           </Menu>
-          <Route exact path="/" component={Home} />
-          <Route path="/auth" component={Auth} />
-        </Router>
-      </>
+        </header>
+        <Route exact path="/" component={Home} />
+        <Route path="/registration" component={Registration} />
+        <Route path="/login" component={Login} />
+        <Route path="/support" component={Support} />{" "}
+      </Router>
     );
   }
 }
